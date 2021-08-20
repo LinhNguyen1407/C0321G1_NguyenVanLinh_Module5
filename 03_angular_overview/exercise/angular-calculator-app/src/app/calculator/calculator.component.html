@@ -1,0 +1,27 @@
+<h2>Simple Calculator</h2>
+<table>
+  <tr>
+    <td>Operator 1</td>
+    <td><input type="number" [(ngModel)]="operator1"/></td>
+  </tr>
+  <tr>
+    <td>Operator 2</td>
+    <td><input type="number" [(ngModel)]="operator2"/></td>
+  </tr>
+  <tr>
+    <td>Operand</td>
+    <td>
+      <button style="margin: 5px; width: 35px" (click)="calculator('+')">+</button>
+      <button style="margin: 5px; width: 35px" (click)="calculator('-')">-</button>
+      <button style="margin: 5px; width: 35px" (click)="calculator('*')">*</button>
+      <button style="margin: 5px; width: 35px" (click)="calculator('/')">/</button>
+    </td>
+  </tr>
+  <tr>
+    <td>Result</td>
+    <td>
+      <span>{{result}}</span>
+    </td>
+  </tr>
+</table>
+
