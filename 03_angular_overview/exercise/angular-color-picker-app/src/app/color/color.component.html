@@ -1,13 +1,5 @@
 <h2>Choose a color:</h2>
-<!--<select #element (change)="changeColor(element.value)">-->
-<!--  <option>&#45;&#45; Choose color &#45;&#45;</option>-->
-<!--  <option value="red">Red</option>-->
-<!--  <option value="green">Green</option>-->
-<!--  <option value="blue">Blue</option>-->
-<!--  <option value="yellow">Yellow</option>-->
-<!--</select>-->
-
-<select [(ngModel)]="color" style="height: 30px">
+<select style="height: 30px" #element (change)="changeColor(element.value)">
   <option value="black">Default color: black</option>
   <option value="red">Red</option>
   <option value="green">Green</option>

@@ -1,0 +1,57 @@
+<div class="container text-primary">
+  <h2 class="text-center text-success mt-3">Create new service</h2>
+  <form action="/service/create" method="post">
+    <div class="mb-3">
+      <label for="code">Code</label>
+      <input type="text" class="form-control" name="code" id="code" />
+    </div>
+    <div class="mb-3">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name" />
+    </div>
+
+    <div class="mb-3">
+      <label for="area">Area</label>
+      <input type="text" class="form-control" name="area" id="area" />
+    </div>
+    <div class="mb-3">
+      <label for="numFloors">Number of Floors</label>
+      <input type="text" class="form-control" name="numFloors" id="numFloors" />
+    </div>
+    <div class="mb-3">
+      <label for="maxPeople">Maximum People</label>
+      <input type="text" class="form-control" name="maxPeople" id="maxPeople" />
+    </div>
+    <div class="mb-3">
+      <label for="poorArea">Poor Area</label>
+      <input type="text" class="form-control" name="poorArea" id="poorArea" />
+    </div>
+    <div class="mb-3">
+      <label for="standardRoom">Standard Room</label>
+      <input type="text" class="form-control" name="standardRoom" id="standardRoom" />
+    </div>
+    <div class="mb-3">
+      <label for="cost">Cost</label>
+      <input type="text" class="form-control" name="cost" id="cost" />
+    </div>
+    <div class="mb-3">
+      <label for="descOthers">description Others</label>
+      <input type="text" class="form-control" name="descOthers" id="descOthers" />
+    </div>
+    <div class="mb-3">
+      <label for="serviceType">Service Type</label>
+      <select class="form-select" id="serviceType">
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="rentType">Rent Type</label>
+      <select class="form-select" id="rentType">
+      </select>
+    </div>
+    <div class="form-inline">
+      <button type="submit" class="btn btn-primary" style="margin-right: 10px">Create</button>
+      <a class="btn btn-dark" href="/service" role="button">Back</a>
+    </div>
+  </form>
+</div>
+
