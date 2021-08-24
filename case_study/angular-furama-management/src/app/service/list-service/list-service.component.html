@@ -21,9 +21,20 @@
       </tr>
       </thead>
       <tbody>
+      <tr *ngFor="let s of serviceList | paginate: { itemsPerPage: 1, currentPage: p }; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{s.code}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.area}}</td>
+        <td>{{s.numFloors}}</td>
+        <td>{{s.maxPeople}}</td>
+        <td>{{s.cost}}</td>
+        <td><button class="btn btn-success">Detail</button></td>
+      </tr>
       </tbody>
     </table>
   </div>
+  <pagination-controls (pageChange)="p = $event" class="m-lg-2"></pagination-controls>
 </div>
 
 

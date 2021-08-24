@@ -16,6 +16,7 @@ import { ListServiceComponent } from './service/list-service/list-service.compon
 import { CreateServiceComponent } from './service/create-service/create-service.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './layout/header/header.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HeaderComponent } from './layout/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

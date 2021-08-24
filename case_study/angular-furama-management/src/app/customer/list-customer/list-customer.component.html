@@ -36,8 +36,24 @@
       </tr>
       </thead>
       <tbody>
+      <tr *ngFor="let c of customerList | paginate: { itemsPerPage: 1, currentPage: p }; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{c.code}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.birthday}}</td>
+        <td>{{c.gender == 1? 'Male': 'Female'}}</td>
+        <td>{{c.customerType.name}}</td>
+        <td>{{c.idCard}}</td>
+        <td>{{c.phone}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.address}}</td>
+        <td><button class="btn btn-success">Detail</button></td>
+        <td><button class="btn btn-warning">Edit</button></td>
+        <td><button class="btn btn-danger">Delete</button></td>
+      </tr>
       </tbody>
     </table>
   </div>
+  <pagination-controls (pageChange)="p = $event" class="m-lg-2"></pagination-controls>
 </div>
 
