@@ -1,14 +1,14 @@
-interface PositionEmployee {
+export interface PositionEmployee {
   id: number;
   name: string;
 }
 
-interface Division {
+export interface Division {
   id: number;
   name: string;
 }
 
-interface EducationDegree {
+export interface EducationDegree {
   id: number;
   name: string;
 }

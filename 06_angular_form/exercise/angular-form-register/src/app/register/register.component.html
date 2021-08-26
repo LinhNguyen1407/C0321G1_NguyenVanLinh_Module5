@@ -1,0 +1,95 @@
+<div class="container">
+  <h3 class="mb-5">Register Form</h3>
+  <form [formGroup]="registerForm">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <p style="color: red"
+         *ngIf="registerForm.controls.email.hasError('required') &&
+         registerForm.controls.email.dirty">Email must be not empty
+      </p>
+      <p style="color: red"
+         *ngIf="registerForm.controls.email.hasError('email') &&
+         registerForm.controls.email.dirty">Email must have right format
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="text" class="form-control" id="password" ngModel name="passwordTemp" formControlName="password">
+      <p style="color: red"
+         *ngIf="registerForm.controls.password.hasError('required') &&
+         registerForm.controls.password.dirty">Password must be not empty
+      </p>
+      <p style="color: red"
+         *ngIf="registerForm.controls.password.hasError('minlength') &&
+         registerForm.controls.password.dirty">Password must be at least 6 characters
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Confirm Password</label>
+      <input type="text" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+      <p style="color: red"
+         *ngIf="registerForm.controls.confirmPassword.hasError('required') &&
+         registerForm.controls.confirmPassword.dirty">Confirm password must be not empty
+      </p>
+      <p style="color: red"
+         *ngIf="registerForm.controls.confirmPassword.hasError('minlength') &&
+         registerForm.controls.confirmPassword.dirty">Confirm password must be at least 6 characters
+      </p>
+      <p style="color: red"
+         *ngIf="registerForm.controls.confirmPassword.hasError('passwordNotMatch')">Confirm password must match to password
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="country" class="form-label">Choose country</label>
+      <select class="form-select" id="country" formControlName="country">
+        <option [ngValue]="c.id" *ngFor="let c of countryList">{{c.name}}</option>
+      </select>
+      <p style="color: red"
+         *ngIf="registerForm.controls.country.hasError('required') &&
+         registerForm.controls.country.dirty">Please choose country
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="age" class="form-label">Age</label>
+      <input type="number" class="form-control" id="age" formControlName="age">
+      <p style="color: red"
+         *ngIf="registerForm.controls.age.hasError('required') &&
+         registerForm.controls.age.dirty">Age must be not empty
+      </p>
+      <p style="color: red"
+         *ngIf="registerForm.controls.age.hasError('invalidAge') &&
+         registerForm.controls.age.dirty">Age must be not less than 18
+      </p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Gender:</label>
+      <div class="form-check form-check-inline mx-xl-5">
+        <input class="form-check-input" type="radio" name="gender" id="male" value="male" formControlName="gender">
+        <label class="form-check-label" for="male">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="female" value="female" formControlName="gender">
+        <label class="form-check-label" for="female">Female</label>
+      </div>
+      <p style="color: red"
+         *ngIf="registerForm.controls.gender.hasError('required') &&
+         registerForm.controls.gender.dirty">Please choose gender
+      </p>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="text" class="form-control" id="phone" formControlName="phone">
+      <p style="color: red"
+         *ngIf="registerForm.controls.phone.hasError('required') &&
+         registerForm.controls.phone.dirty">Phone must be not empty
+      </p>
+      <p style="color: red"
+         *ngIf="registerForm.controls.phone.hasError('pattern') &&
+         registerForm.controls.phone.dirty">Phone must have right format
+      </p>
+    </div>
+    <button (click)="sendInfoRegister()" [disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
+  </form>
+</div>
+

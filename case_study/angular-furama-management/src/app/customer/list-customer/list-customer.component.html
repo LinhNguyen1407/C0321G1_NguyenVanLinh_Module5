@@ -2,18 +2,18 @@
   <h2 class="mt-2">Customer List</h2>
   <div class="row mb-3">
     <div class="col-lg-9">
-      <a class="btn btn-success" style="margin-right: 10px" href="/customer/create" role="button">Create new customer</a>
-      <a class="btn btn-success" href="/customer/use-service" role="button">List customer use service</a>
+      <a class="btn btn-success" style="margin-right: 10px" routerLink="/customer/create" role="button">Create new customer</a>
+      <a class="btn btn-success" routerLink="/customer/use-service" role="button">List customer use service</a>
     </div>
-    <div class="col-lg-3">
-      <form class="row" action="/customer/search">
-        <input style="width: 290px; margin-right: 10px" class="form-control" type="search" name="keyword"
-               placeholder="Name or ID Card" aria-label="Search">
-        <button style="width: 85px" class="btn btn-outline-success my-2 my-sm-0 font-weight-bold" type="submit">
-          Search
-        </button>
-      </form>
-    </div>
+<!--    <div class="col-lg-3">-->
+<!--      <form class="row">-->
+<!--        <input style="width: 290px; margin-right: 10px" class="form-control" type="search" name="keyword"-->
+<!--               placeholder="Name or ID Card" aria-label="Search">-->
+<!--        <button style="width: 85px" class="btn btn-outline-success my-2 my-sm-0 font-weight-bold" type="submit">-->
+<!--          Search-->
+<!--        </button>-->
+<!--      </form>-->
+<!--    </div>-->
   </div>
 
   <div>
@@ -36,7 +36,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let c of customerList | paginate: { itemsPerPage: 1, currentPage: p }; index as i">
+      <tr *ngFor="let c of customers | paginate: { itemsPerPage: 1, currentPage: p }; index as i">
         <td>{{i + 1}}</td>
         <td>{{c.code}}</td>
         <td>{{c.name}}</td>

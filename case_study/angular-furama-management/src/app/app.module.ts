@@ -17,6 +17,7 @@ import { CreateServiceComponent } from './service/create-service/create-service.
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './layout/header/header.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -35,11 +36,12 @@ import {NgxPaginationModule} from "ngx-pagination";
     HomeComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgxPaginationModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgxPaginationModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
