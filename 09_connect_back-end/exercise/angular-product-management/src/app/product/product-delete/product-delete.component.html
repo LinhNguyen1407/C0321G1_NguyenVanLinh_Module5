@@ -1,0 +1,30 @@
+<h1>Thông tin sản phẩm</h1>
+<table>
+  <tr>
+    <td>Mã sản phẩm:</td>
+    <td>{{product.id}}</td>
+  </tr>
+  <tr>
+    <td>Tên sản phẩm:</td>
+    <td>{{product.name}}</td>
+  </tr>
+  <tr>
+    <td>Giá sản phẩm</td>
+    <td>{{product.price}}</td>
+  </tr>
+  <tr>
+    <td>Mô tả về sản phẩm</td>
+    <td>{{product.description}}</td>
+  </tr>
+  <tr>
+    <td>Danh mục</td>
+    <td>{{product.category.name}}</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+      <button (click)="deleteProduct(id)">Xóa</button>
+    </td>
+  </tr>
+</table>
+

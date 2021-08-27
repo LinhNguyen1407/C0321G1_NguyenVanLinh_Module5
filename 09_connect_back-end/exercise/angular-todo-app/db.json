@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "xem phim",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "content": "nghe nhạc",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "content": "tập thể thao",
+      "complete": false
+    },
+    {
+      "content": "chơi game",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "id": 5,
+      "content": "học bài",
+      "complete": false
+    },
+    {
+      "id": 6,
+      "content": "dọn nhà",
+      "complete": false
+    }
+  ]
+}

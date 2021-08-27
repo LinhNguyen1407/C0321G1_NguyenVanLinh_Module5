@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iphone",
+      "price": 12,
+      "description": "new",
+      "category": {
+        "name": "Xiaomi",
+        "id": 4
+      }
+    },
+    {
+      "id": 3,
+      "name": "ss galaxy",
+      "price": 10,
+      "description": "new",
+      "category": {
+        "name": "Sam sung",
+        "id": 3
+      }
+    },
+    {
+      "id": 5,
+      "name": "LG123",
+      "price": 5,
+      "description": "like 99%",
+      "category": {
+        "name": "LG",
+        "id": 2
+      }
+    }
+  ],
+  "categories": [
+    {
+      "name": "Iphone",
+      "id": 1
+    },
+    {
+      "name": "LG",
+      "id": 2
+    },
+    {
+      "name": "Sam sung",
+      "id": 3
+    },
+    {
+      "name": "Xiaomi",
+      "id": 4
+    }
+  ]
+}
