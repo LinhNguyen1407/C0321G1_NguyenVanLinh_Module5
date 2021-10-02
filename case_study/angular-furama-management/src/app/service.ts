@@ -1,9 +1,9 @@
-interface ServiceType {
+export interface ServiceType {
   id: number;
   name: string;
 }
 
-interface RentType {
+export interface RentType {
   id: number;
   name: string;
 }

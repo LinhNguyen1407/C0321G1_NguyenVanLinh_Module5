@@ -1,0 +1,302 @@
+{
+  "customers": [
+    {
+      "code": "KH-0003",
+      "name": "Nguyễn Văn C",
+      "birthday": "2003-08-01",
+      "gender": "1",
+      "idCard": "999124567",
+      "phone": "0932444999",
+      "email": "c@gmail.com",
+      "address": "HN",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      },
+      "id": 1
+    },
+    {
+      "code": "KH-0021",
+      "name": "Nguyễn Thị B",
+      "birthday": "1999-08-10",
+      "gender": "0",
+      "idCard": "999123444",
+      "phone": "0975404595",
+      "email": "b@gmail.com",
+      "address": "QN",
+      "customerType": {
+        "id": 3,
+        "name": "Silver"
+      },
+      "id": 2
+    },
+    {
+      "code": "KH-0014",
+      "name": "Nguyễn Văn ABC",
+      "birthday": "2021-08-24",
+      "gender": "1",
+      "idCard": "999123111",
+      "phone": "+84975404595",
+      "email": "b@gmail.com",
+      "address": "QN",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 3
+    },
+    {
+      "code": "KH-0004",
+      "name": "Nguyễn Văn A123",
+      "birthday": "2001-08-02",
+      "gender": "1",
+      "idCard": "999123111",
+      "phone": "+84975404595",
+      "email": "a@gmail.com",
+      "address": "ĐN",
+      "customerType": {
+        "id": 2,
+        "name": "Gold"
+      },
+      "id": 4
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Silver"
+    }
+  ],
+  "employees": [
+    {
+      "name": "Nguyễn Thị An",
+      "birthday": "2021-08-04",
+      "idCard": "999123111",
+      "salary": "7",
+      "phone": "0975123456",
+      "email": "an@gmail.com",
+      "address": "ĐN",
+      "position": {
+        "id": 1,
+        "name": "Lễ tân"
+      },
+      "division": {
+        "id": 1,
+        "name": "Phục vụ"
+      },
+      "degree": {
+        "id": 1,
+        "name": "Trung cấp"
+      },
+      "id": 1
+    },
+    {
+      "name": "Nguyễn Thị Hoa",
+      "birthday": "2000-08-10",
+      "idCard": "2121212123",
+      "salary": "12",
+      "phone": "0988123999",
+      "email": "hoa@gmail.com",
+      "address": "QN",
+      "position": {
+        "id": 2,
+        "name": "Quản lý"
+      },
+      "division": {
+        "id": 2,
+        "name": "Quản lý"
+      },
+      "degree": {
+        "id": 3,
+        "name": "Đại học"
+      },
+      "id": 2
+    },
+    {
+      "name": "Nguyễn Văn Nam",
+      "birthday": "2021-08-03",
+      "idCard": "999123111",
+      "salary": "30",
+      "phone": "+84975404595",
+      "email": "c@gmail.com",
+      "address": "ĐN",
+      "position": {
+        "id": 3,
+        "name": "Giám đốc"
+      },
+      "division": {
+        "id": 3,
+        "name": "Điều hành"
+      },
+      "degree": {
+        "id": 3,
+        "name": "Đại học"
+      },
+      "id": 3
+    }
+  ],
+  "positions": [
+    {
+      "id": 1,
+      "name": "Lễ tân"
+    },
+    {
+      "id": 2,
+      "name": "Quản lý"
+    },
+    {
+      "id": 3,
+      "name": "Giám đốc"
+    }
+  ],
+  "divisions": [
+    {
+      "id": 1,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 2,
+      "name": "Quản lý"
+    },
+    {
+      "id": 3,
+      "name": "Điều hành"
+    }
+  ],
+  "degrees": [
+    {
+      "id": 1,
+      "name": "Trung cấp"
+    },
+    {
+      "id": 2,
+      "name": "Cao đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Đại học"
+    }
+  ],
+  "services": [
+    {
+      "code": "DV-0001",
+      "name": "Villa01",
+      "area": "300",
+      "numFloors": "2",
+      "maxPeople": "20",
+      "cost": "20",
+      "standardRoom": "Vip1",
+      "descOthers": "view rất đẹp",
+      "poorArea": "55",
+      "serviceType": {
+        "id": 1,
+        "name": "Vip"
+      },
+      "rentType": {
+        "id": 2,
+        "name": "Ngày"
+      },
+      "id": 1
+    },
+    {
+      "code": "DV-0002",
+      "name": "House01",
+      "area": "200",
+      "numFloors": "3",
+      "maxPeople": "10",
+      "cost": "10",
+      "standardRoom": "Vip2",
+      "descOthers": "Thoáng mát",
+      "poorArea": "40",
+      "serviceType": {
+        "id": 1,
+        "name": "Vip"
+      },
+      "rentType": {
+        "id": 3,
+        "name": "Tháng"
+      },
+      "id": 2
+    },
+    {
+      "code": "DV-0003",
+      "name": "Room01",
+      "area": 40,
+      "numFloors": 1,
+      "maxPeople": 4,
+      "cost": 3,
+      "standardRoom": "Standard",
+      "descOthers": "Thoáng mát",
+      "poorArea": 0,
+      "serviceType": {
+        "id": 2,
+        "name": "Standard"
+      },
+      "rentType": {
+        "id": 1,
+        "name": "Giờ"
+      },
+      "id": 3
+    }
+  ],
+  "serviceTypes": [
+    {
+      "id": 1,
+      "name": "Vip"
+    },
+    {
+      "id": 2,
+      "name": "Standard"
+    }
+  ],
+  "rentTypes": [
+    {
+      "id": 1,
+      "name": "Giờ"
+    },
+    {
+      "id": 2,
+      "name": "Ngày"
+    },
+    {
+      "id": 3,
+      "name": "Tháng"
+    },
+    {
+      "id": 4,
+      "name": "Năm"
+    }
+  ],
+  "contracts": [
+    {
+      "dateGroup": {
+        "startDate": "2021-08-31",
+        "endDate": "2021-09-01"
+      },
+      "deposit": 5000000,
+      "employeeId": 2,
+      "customerId": 3,
+      "serviceId": 3,
+      "id": 1
+    },
+    {
+      "dateGroup": {
+        "startDate": "2021-08-30",
+        "endDate": "2021-08-31"
+      },
+      "deposit": 3000000,
+      "employeeId": 1,
+      "customerId": 2,
+      "serviceId": 2,
+      "id": 2
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {EmployeeService} from "../../serviceApp/employee.service";
 import {Router} from "@angular/router";
 import {Division, EducationDegree, PositionEmployee} from "../../employee";
@@ -19,17 +19,17 @@ export class CreateEmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeeService,
               private router: Router) {
     this.employeeForm = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl(''),
-      birthday: new FormControl(''),
-      idCard: new FormControl(''),
-      salary: new FormControl(''),
-      phone: new FormControl(''),
-      email: new FormControl(''),
-      address: new FormControl(''),
-      position: new FormControl(''),
-      division: new FormControl(''),
-      degree: new FormControl('')
+      // id: new FormControl(''),
+      name: new FormControl('',[Validators.required]),
+      birthday: new FormControl('', [Validators.required]),
+      idCard: new FormControl('', [Validators.required]),
+      salary: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('^\\+84\\d{9,10}$')]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      address: new FormControl('', [Validators.required]),
+      position: new FormControl('', [Validators.required]),
+      division: new FormControl('', [Validators.required]),
+      degree: new FormControl('', [Validators.required])
     });
   }
 
@@ -41,21 +41,28 @@ export class CreateEmployeeComponent implements OnInit {
 
   createEmployee() {
     const employee = this.employeeForm.value;
-    this.employeeService.saveEmployee(employee);
-    this.employeeForm.reset();
-    this.router.navigateByUrl('employee/list')
+    this.employeeService.save(employee).subscribe( () => {
+      this.employeeForm.reset();
+      this.router.navigateByUrl('employee/list')
+    });
   }
 
   getPositions() {
-    this.positions = this.employeeService.getPositions();
+    this.employeeService.getPositions().subscribe( positions => {
+      this.positions = positions;
+    });
   }
 
   getDivisions() {
-    this.divisions = this.employeeService.getDivisions();
+    this.employeeService.getDivisions().subscribe( divisions => {
+      this.divisions = divisions;
+    });
   }
 
   getDegrees() {
-    this.degrees = this.employeeService.getDegrees()
+    this.employeeService.getDegrees().subscribe( degrees => {
+      this.degrees = degrees;
+    });
   }
 
 }

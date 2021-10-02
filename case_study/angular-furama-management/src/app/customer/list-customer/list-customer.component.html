@@ -1,19 +1,27 @@
 <div class="container-fluid text-primary">
   <h2 class="mt-2">Customer List</h2>
   <div class="row mb-3">
-    <div class="col-lg-9">
+    <div class="col-lg-6">
       <a class="btn btn-success" style="margin-right: 10px" routerLink="/customer/create" role="button">Create new customer</a>
-      <a class="btn btn-success" routerLink="/customer/use-service" role="button">List customer use service</a>
     </div>
-<!--    <div class="col-lg-3">-->
-<!--      <form class="row">-->
-<!--        <input style="width: 290px; margin-right: 10px" class="form-control" type="search" name="keyword"-->
-<!--               placeholder="Name or ID Card" aria-label="Search">-->
-<!--        <button style="width: 85px" class="btn btn-outline-success my-2 my-sm-0 font-weight-bold" type="submit">-->
-<!--          Search-->
-<!--        </button>-->
-<!--      </form>-->
-<!--    </div>-->
+    <div class="col-lg-3">
+      <div class="row">
+        <input [(ngModel)]="sortKey" style="width: 290px; margin-right: 10px" class="form-control" type="text"
+               placeholder="Sort by input">
+        <button (click)="sort(sortKey)" style="width: 85px" class="btn btn-outline-success my-2 my-sm-0 font-weight-bold" type="button">
+          Sort
+        </button>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="row">
+        <input [(ngModel)]="searchKey" style="width: 290px; margin-right: 10px" class="form-control" type="text"
+               placeholder="Name or ID Card">
+        <button (click)="search(searchKey)" style="width: 85px" class="btn btn-outline-success my-2 my-sm-0 font-weight-bold" type="button">
+          Search
+        </button>
+      </div>
+    </div>
   </div>
 
   <div>
@@ -36,7 +44,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let c of customers | paginate: { itemsPerPage: 1, currentPage: p }; index as i">
+      <tr *ngFor="let c of customers | paginate: { itemsPerPage: 2, currentPage: p }; index as i">
         <td>{{i + 1}}</td>
         <td>{{c.code}}</td>
         <td>{{c.name}}</td>
@@ -47,9 +55,9 @@
         <td>{{c.phone}}</td>
         <td>{{c.email}}</td>
         <td>{{c.address}}</td>
-        <td><button class="btn btn-success">Detail</button></td>
-        <td><button class="btn btn-warning">Edit</button></td>
-        <td><button class="btn btn-danger">Delete</button></td>
+        <td><a class="btn btn-success" routerLink="/customer/detail/{{c.id}}" role="button">Detail</a></td>
+        <td><a class="btn btn-warning" routerLink="/customer/edit/{{c.id}}" role="button">Edit</a></td>
+        <td><button class="btn btn-danger" (click)="delete(c.id, c.name)">Delete</button></td>
       </tr>
       </tbody>
     </table>

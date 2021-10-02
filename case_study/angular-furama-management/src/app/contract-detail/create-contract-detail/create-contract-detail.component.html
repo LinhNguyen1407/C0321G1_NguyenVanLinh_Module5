@@ -1,6 +1,6 @@
 <div class="container text-primary">
   <h2 class="text-center text-success mt-3">Create new contract detail</h2>
-  <form action="/contract-detail/create" method="post">
+  <form>
     <div class="mb-3">
       <label for="contract">Contract</label>
       <select class="form-select" id="contract">
@@ -17,7 +17,7 @@
     </div>
     <div class="form-inline">
       <button type="submit" class="btn btn-primary" style="margin-right: 10px">Create</button>
-      <a class="btn btn-dark" href="/contract" role="button">Back</a>
+      <a class="btn btn-dark" routerLink="/contract/list" role="button">Back</a>
     </div>
   </form>
 </div>

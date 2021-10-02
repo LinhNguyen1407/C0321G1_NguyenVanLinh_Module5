@@ -1,36 +1,67 @@
 <div class="container text-primary">
   <h2 class="text-center text-success mt-3">Create new contract</h2>
-  <form action="/contract/create" method="post">
+  <form [formGroup]="contractForm" (ngSubmit)="createContract()">
     <div class="mb-3">
-      <label for="customer">Customer</label>
-      <select class="form-select" id="customer">
-      </select>
+      <label for="customerId">Customer ID</label>
+      <input type="number" class="form-control" name="customerId" id="customerId" formControlName="customerId" />
+      <p style="color: red"
+         *ngIf="contractForm.controls.customerId.hasError('required') &&
+         contractForm.controls.customerId.dirty">please input customer Id
+      </p>
     </div>
     <div class="mb-3">
-      <label for="service">Service</label>
-      <select class="form-select" id="service">
-      </select>
+      <label for="serviceId">Service ID</label>
+      <input type="number" class="form-control" name="serviceId" id="serviceId" formControlName="serviceId" />
+      <p style="color: red"
+         *ngIf="contractForm.controls.serviceId.hasError('required') &&
+         contractForm.controls.serviceId.dirty">please input service Id
+      </p>
     </div>
-    <div class="mb-3">
-      <label for="startDate">Start Date</label>
-      <input type="date" class="form-control" name="startDate" id="startDate" />
-    </div>
-    <div class="mb-3">
-      <label for="endDate">End Date</label>
-      <input type="date" class="form-control" name="endDate" id="endDate" />
+    <div formGroupName="dateGroup">
+      <div class="mb-3">
+        <label for="startDate">Start Date</label>
+        <input type="date" class="form-control" name="startDate" id="startDate" formControlName="startDate" />
+        <p style="color: red"
+           *ngIf="contractForm.controls.dateGroup.get('startDate').hasError('required') &&
+         contractForm.controls.dateGroup.touched">please choose start date
+        </p>
+        <p style="color: red"
+           *ngIf="contractForm.controls.dateGroup.get('startDate').hasError('inValidDate') &&
+         contractForm.controls.dateGroup.touched">please do not choose past date
+        </p>
+      </div>
+      <div class="mb-3">
+        <label for="endDate">End Date</label>
+        <input type="date" class="form-control" name="endDate" id="endDate" formControlName="endDate" />
+        <p style="color: red"
+           *ngIf="contractForm.controls.dateGroup.get('endDate').hasError('required') &&
+         contractForm.controls.dateGroup.dirty">please choose end date
+        </p>
+        <p style="color: red"
+           *ngIf="contractForm.controls.dateGroup.hasError('inValidEndDate')  &&
+         contractForm.controls.dateGroup.dirty">please choose end date not less start date
+        </p>
+      </div>
     </div>
     <div class="mb-3">
       <label for="deposit">Deposit</label>
-      <input type="text" class="form-control" name="deposit" id="deposit" />
+      <input type="number" class="form-control" name="deposit" id="deposit" formControlName="deposit" />
+      <p style="color: red"
+         *ngIf="contractForm.controls.deposit.hasError('required') &&
+         contractForm.controls.deposit.dirty">please input deposit
+      </p>
     </div>
     <div class="mb-3">
-      <label for="employee">Employee</label>
-      <select class="form-select" id="employee">
-      </select>
+      <label for="employeeId">Employee ID</label>
+      <input type="number" class="form-control" name="employeeId" id="employeeId" formControlName="employeeId" />
+      <p style="color: red"
+         *ngIf="contractForm.controls.employeeId.hasError('required') &&
+         contractForm.controls.employeeId.dirty">please input employee Id
+      </p>
     </div>
     <div class="form-inline">
-      <button type="submit" class="btn btn-primary" style="margin-right: 10px">Create</button>
-      <a class="btn btn-dark" href="/contract" role="button">Back</a>
+      <button [disabled]="contractForm.invalid" type="submit" class="btn btn-primary" style="margin-right: 10px">Create</button>
+      <a class="btn btn-dark" routerLink="/contract/list" role="button">Back</a>
     </div>
   </form>
 </div>

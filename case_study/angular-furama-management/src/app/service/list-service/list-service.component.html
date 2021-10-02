@@ -2,7 +2,7 @@
   <h2 class="mt-2">Service List</h2>
   <div class="row mb-3">
     <div class="col-lg-12">
-      <a class="btn btn-success" href="/service/create" role="button">Create new service</a>
+      <a class="btn btn-success" routerLink="/service/create" role="button">Create new service</a>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let s of serviceList | paginate: { itemsPerPage: 1, currentPage: p }; index as i">
+      <tr *ngFor="let s of services | paginate: { itemsPerPage: 2, currentPage: p }; index as i">
         <td>{{i + 1}}</td>
         <td>{{s.code}}</td>
         <td>{{s.name}}</td>

@@ -2,7 +2,7 @@
   <h2 class="mt-2">Contract List</h2>
   <div class="row mb-3">
     <div class="col-lg-12">
-      <a class="btn btn-success" href="/contract/create" role="button">Create new contract</a>
+      <a class="btn btn-success" routerLink="/contract/create" role="button">Create new contract</a>
     </div>
   </div>
 
@@ -21,15 +21,15 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let c of contractList | paginate: { itemsPerPage: 1, currentPage: p }; index as i">
+      <tr *ngFor="let c of contracts | paginate: { itemsPerPage: 2, currentPage: p }; index as i">
         <td>{{i + 1}}</td>
         <td>{{c.customerId}}</td>
         <td>{{c.serviceId}}</td>
-        <td>{{c.startDate}}</td>
-        <td>{{c.endDate}}</td>
+        <td>{{c.dateGroup.startDate}}</td>
+        <td>{{c.dateGroup.endDate}}</td>
         <td>{{c.employeeId}}</td>
         <td>{{c.deposit}}</td>
-        <td><button class="btn btn-success">Add</button></td>
+        <td><button class="btn btn-success" routerLink="/contract-detail/create">Add</button></td>
       </tr>
       </tbody>
     </table>
